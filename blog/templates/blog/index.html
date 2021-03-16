@@ -1,0 +1,61 @@
+
+    {% extends 'base.html' %}
+
+
+    {% block title %}
+     {{title}}
+    {% endblock title %}
+    
+    
+    {% block subtitle %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                    {{subtitle}}
+            </div>
+        </div>
+    {% endblock subtitle %}
+        
+    
+    {% block contents %}
+
+   <div class="container">
+       <div class="row">
+           <div class="col">
+            <ul class ="nav">
+                <li class="nav-link">
+                    <a class="nav-link" href="/blog/">
+                     All-Post
+                    </a>
+                </li>
+            {% for datacatagory in catagories  %}
+                <li class="nav-link">
+                    <a class="nav-link" href="/blog/catagory/{{datacatagory.catagory}}">
+                    {{datacatagory.catagory}}
+                    </a>
+                </li>
+            {% endfor %}
+                
+            </ul>
+           </div>
+       </div>
+   </div> 
+    {% for post in posts  %}
+            <div class="row">
+                <div class="col mt-3 pt-2">
+                 
+                <div class="col">
+                    <a href="/blog/post/{{post.slug}}">
+                    <h2>{{post.judul}}</h2>
+                    </a>
+                    <p>{{post.publish}}</p>
+                    <p>{{post.body|truncatewords:50}}</p>
+                    <p>{{post.update}}</p>
+                </div>
+            </div>
+    </div>
+    {% endfor %}
+        
+        
+    {% endblock contents %}
+        

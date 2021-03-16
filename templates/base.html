@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'snippets/styles.html' %}
+    <title>
+        
+        {% block title %}
+            {{title}}
+        {% endblock title %}
+            
+    </title>
+</head>
+<body>
+    <div class="row bg-dark" style="height: 30px;">
+        <div class="col" >
+            <a href="#"> <p>Call Us | 082210474893</p></a>
+        </div>
+    </div>
+</div>
+{% include 'snippets/navbar.html' %}
+
+{% block subtitle %}
+{% endblock subtitle %}
+    
+
+{% block contents %}
+{% endblock contents %}
+
+
+    
+
+
+   {% include 'snippets/scripts.html' %} 
+</body>
+</html>
